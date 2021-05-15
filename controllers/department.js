@@ -14,7 +14,6 @@ module.exports = {
       .then((departments) => res.status(200).send(departments))
       .catch((error) => { res.status(400).send(error); });
   },
-
   getById(req, res) {
     return Department
       .findByPk(req.params.id, {
@@ -37,7 +36,6 @@ module.exports = {
       })
       .catch((error) => res.status(400).send(error));
   },
-
   add(req, res) {
     return Department
       .create({
@@ -48,7 +46,6 @@ module.exports = {
       .then((department) => res.status(201).send(department))
       .catch((error) => res.status(400).send(error));
   },
-
   addDepartmentWithUser(req, res) {
     return Department
       .create({
@@ -64,7 +61,6 @@ module.exports = {
       .then((department) => res.status(201).send(department))
       .catch((error) => res.status(400).send(error));
   },
-
   update(req, res) {
     return Department
       .findByPk(req.params.id)
@@ -84,7 +80,6 @@ module.exports = {
       })
       .catch((error) => res.status(400).send(error));
   },
-
   delete(req, res) {
     return Department
       .findByPk(req.params.id)
